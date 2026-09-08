@@ -1,0 +1,64 @@
+name: Apply as a founding design partner
+description: Commit a real artifact, evaluation, meeting cadence, or introduction.
+title: "[Design partner]: "
+labels: ["phase-1", "design-partner"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Founding design partners help shape an open reproducibility standard for low-cost LeRobot manipulation. Participation is free during discovery. Do not disclose confidential information in this public form.
+  - type: input
+    id: organization
+    attributes:
+      label: Team, lab, project, or community
+    validations:
+      required: true
+  - type: dropdown
+    id: hardware
+    attributes:
+      label: Primary hardware
+      options:
+        - SO-100
+        - SO-101
+        - LeKiwi
+        - ALOHA-compatible
+        - Another LeRobot-compatible arm
+        - Simulation only
+    validations:
+      required: true
+  - type: checkboxes
+    id: commitment
+    attributes:
+      label: Concrete commitment
+      description: Select at least one commitment your team can make in the next six weeks.
+      options:
+        - label: Supply a public policy or dataset for inspection.
+        - label: Attempt a standardized evaluation on our hardware.
+        - label: Meet every two weeks during the discovery cycle.
+        - label: Permit publication of agreed, non-confidential results.
+        - label: Introduce another qualified practitioner if the work proves useful.
+    validations:
+      required: true
+  - type: textarea
+    id: artifact
+    attributes:
+      label: Candidate artifact or evaluation
+      description: Describe the policy, dataset, robot configuration, or transfer attempt you can contribute.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: A useful six-week outcome
+      description: What concrete result would make participation worthwhile for you?
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Participation acknowledgement
+      options:
+        - label: I understand this is collaborative discovery, not a paid service or safety certification.
+          required: true
+        - label: I am authorized to represent the project or organization named above.
+          required: true

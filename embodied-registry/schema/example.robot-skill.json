@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1",
+  "skill": {
+    "name": "Deformable package pick",
+    "version": "1.0.0",
+    "license": "apache-2.0",
+    "source": {
+      "type": "huggingface",
+      "repository": "example/deformable-package-pick",
+      "revision": "7e2fa9c4"
+    }
+  },
+  "policy": { "framework": "lerobot", "architecture": "smolvla" },
+  "hardware": { "robot_family": "SO-101", "end_effector": "standard-gripper", "sensors": [{ "type": "rgb", "position": "wrist" }] },
+  "runtime": { "ros_distribution": "lyrical", "control_frequency_hz": 30, "accelerator": "cuda" },
+  "evaluation": { "benchmark": "deformable-pick-v1", "trials": 100, "seed": 4217 }
+}
