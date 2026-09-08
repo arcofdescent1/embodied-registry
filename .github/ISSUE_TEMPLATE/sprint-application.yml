@@ -1,0 +1,60 @@
+name: Reproduction Sprint application
+description: Apply as a team for the current two-week policy reproduction sprint.
+title: "Sprint 01 application: [team name]"
+labels: ["reproduction-sprint", "application"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Apply by September 18, 2026 for Sprint 01. Applications are public. Do not include email addresses, credentials, serial numbers, private facility details, or safety-sensitive information.
+  - type: input
+    id: team
+    attributes:
+      label: Public team name
+      description: The lab, company, classroom, or individual name that may appear in results.
+    validations:
+      required: true
+  - type: dropdown
+    id: hardware
+    attributes:
+      label: Primary robot
+      options: ["SO-101", "SO-100", "Compatible low-cost arm", "Simulation-only control"]
+    validations:
+      required: true
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Hardware and sensor configuration
+      description: Robot revision, gripper, cameras, compute target, and any known modifications. Exclude serial numbers.
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Reproduction plan
+      description: State what you will attempt, the number of trials you can run, and known constraints.
+    validations:
+      required: true
+  - type: checkboxes
+    id: commitments
+    attributes:
+      label: Team commitments
+      options:
+        - label: We can attend or review the September 21 kickoff material.
+          required: true
+        - label: We will publish a robot-skill manifest, including an incomplete or failed result.
+          required: true
+        - label: We will file compatibility failures as they occur and respond during the two-week window.
+          required: true
+        - label: We permit Embodied Registry to include our public evidence and team name in the joint report.
+          required: true
+        - label: We will operate our hardware under our own safety procedures, with an emergency stop and no people in the operating envelope.
+          required: true
+  - type: textarea
+    id: contribution
+    attributes:
+      label: What could your configuration teach the group?
+      description: Examples include a different camera layout, SO-100 hardware, CPU-only inference, or a custom gripper.
+    validations:
+      required: true
+

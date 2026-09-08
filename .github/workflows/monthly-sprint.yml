@@ -1,0 +1,46 @@
+name: Monthly sprint operations
+
+on:
+  schedule:
+    - cron: "0 16 1 * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  open-cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open next sprint selection issue
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const now = new Date();
+            const next = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 1));
+            const cycle = next.toLocaleString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+            const title = `Select ${cycle} Reproduction Sprint policy`;
+            const existing = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'sprint-operations', per_page: 100
+            });
+            if (existing.some(issue => issue.title === title)) return;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              labels: ['sprint-operations'],
+              body: [
+                `This issue operates the ${cycle} monthly sprint.`,
+                '',
+                'Selection gate:',
+                '- Public policy and immutable revision',
+                '- Public dataset or documented task',
+                '- Runnable on low-cost LeRobot-compatible hardware',
+                '- At least three materially different eligible configurations',
+                '- Explicit success predicate and safe operating envelope',
+                '- Named event lead and evidence reviewer',
+                '',
+                'Close this issue after the event page, application deadline, kickoff, evidence deadline, results session, and report date are published.'
+              ].join('\n')
+            });
+

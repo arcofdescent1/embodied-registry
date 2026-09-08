@@ -1,0 +1,73 @@
+name: Sprint compatibility evidence
+description: Record a successful run, blocked attempt, or compatibility failure during a Reproduction Sprint.
+title: "Sprint 01 evidence: [team] / [configuration]"
+labels: ["reproduction-sprint", "evidence"]
+body:
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Outcome
+      options: ["Completed evaluation", "Policy ran but task failed", "Blocked by incompatibility", "Unsafe to continue", "Could not obtain required artifact"]
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Policy revision
+      description: Immutable Hugging Face commit or artifact revision.
+    validations:
+      required: true
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Declared configuration
+      description: Robot, gripper, sensors, calibration method, compute, LeRobot version, and control frequency.
+    validations:
+      required: true
+  - type: textarea
+    id: protocol
+    attributes:
+      label: Evaluation protocol
+      description: Task setup, reset procedure, success predicate, planned trials, and intervention policy.
+    validations:
+      required: true
+  - type: input
+    id: counts
+    attributes:
+      label: Trial counts
+      description: Enter successes / completed trials / planned trials, for example 7 / 10 / 10. Use 0 / 0 / 10 for a blocked attempt.
+    validations:
+      required: true
+  - type: textarea
+    id: failure
+    attributes:
+      label: First decisive failure or deviation
+      description: State the earliest point the source workflow and your run diverged. Write “none” only for a completed, protocol-matching run.
+    validations:
+      required: true
+  - type: input
+    id: manifest
+    attributes:
+      label: Public robot-skill manifest
+      description: Link to the immutable manifest revision in your GitHub or Hugging Face repository.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting public evidence
+      description: Links to logs, evaluation datasets, video, adapter commits, or calibration fingerprints. Do not publish secrets or unsafe operational details.
+    validations:
+      required: true
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: Attestation
+      options:
+        - label: The counts above include every attempted trial under the declared protocol.
+          required: true
+        - label: I have identified interventions, exclusions, and protocol deviations.
+          required: true
+        - label: This submission contains no credentials, personal data, serial numbers, or confidential facility information.
+          required: true
+

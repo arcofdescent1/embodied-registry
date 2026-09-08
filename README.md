@@ -21,6 +21,18 @@ See the [public validator guide](https://embodied-registry.vercel.app/validator)
 
 The inspector reads only the supplied directory. It never executes policy code, imports the target repository, contacts a registry, or sends telemetry. Python 3.10–3.12 is supported on Linux, macOS, and Windows.
 
+## Monthly Reproduction Sprints
+
+The community runs one two-week, multi-hardware reproduction study each month. Every sprint freezes one public policy revision, recruits three to five materially different configurations, publishes failures as they occur, holds a public results session, and produces a reviewed joint report.
+
+[Sprint 01: ACT SO-101 Pick-and-Place](https://embodied-registry.vercel.app/sprints) accepts applications through September 18, 2026. The run window is September 21–October 4, the public results session is October 8, and the joint report is published October 12.
+
+- [Apply to Sprint 01](https://github.com/arcofdescent1/embodied-registry/issues/new?template=sprint-application.yml)
+- [Submit sprint evidence](https://github.com/arcofdescent1/embodied-registry/issues/new?template=sprint-evidence.yml)
+- [Read the operating handbook](community/sprints/README.md)
+- [Read the frozen sprint brief](community/sprints/2026-10-act-so101-pick-place.md)
+- [Subscribe to the event calendar](https://embodied-registry.vercel.app/reproduction-sprints.ics)
+
 ## Phase 0 focus
 
 The initial community is practitioners actively attempting to reproduce or adapt public manipulation policies on SO-100, SO-101, and closely compatible low-cost LeRobot hardware. The first measurable problem is the time and uncertainty involved in reconstructing artifact, calibration, sensing, action, runtime, and evaluation conditions.
@@ -46,5 +58,6 @@ Direct observation, participant reports, and project inference are distinguished
 - `robot_skill/` — Python command-line validator
 - `tests/` — validator contracts and representative repository layouts
 - `embodied-registry/schema/` — open robot-skill 1.0 schema and complete example
+- `community/sprints/` — event handbook, sprint briefs, and joint-report contract
 - `embodied-registry/supabase/` — production database migration prepared for Phase 2
 - `.github/ISSUE_TEMPLATE/` — Phase 1 interview and design-partner intake

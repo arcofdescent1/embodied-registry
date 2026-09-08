@@ -21,6 +21,10 @@ Changes to the manifest contract must keep the packaged schema and public schema
 
 Do not submit private datasets, credentials, confidential configurations, personal contact information, or safety-sensitive operational details to a public issue.
 
+## Participate in a Reproduction Sprint
+
+Apply using the current public sprint form. Selected teams commit to declare their protocol before counted trials, publish a manifest even when blocked, file failures during the run window, and permit their public evidence to appear in the joint report. Reviewers follow the [Reproduction Sprint operating handbook](community/sprints/README.md). Contributions are evaluated for evidence quality and configuration diversity, not successful outcomes.
+
 ## Evidence standard
 
 Distinguish direct observation from inference. Include immutable source revisions when possible. Report failed reproductions as carefully as successful ones. Never describe a result as independently reproduced when the evaluator and artifact owner are the same party.
