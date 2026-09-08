@@ -4,6 +4,23 @@ Embodied Registry makes robot-policy transfer a testable claim.
 
 We help developers using low-cost, LeRobot-compatible manipulation arms determine whether a published policy can run on their hardware—and understand why when it cannot.
 
+## robot-skill validator
+
+The Phase 2 public utility inspects a local robot-policy repository, creates a portable `robot-skill.yaml`, and reports the evidence required for another team to reproduce it. It detects common LeRobot and robotics metadata conventions without uploading source code or artifacts.
+
+```bash
+pipx install git+https://github.com/arcofdescent1/embodied-registry.git@v1.0.0
+robot-skill check ./policy
+```
+
+The default check writes an incomplete draft so it can be improved and reviewed like code. For continuous integration, use `robot-skill check . --strict --no-write`. Exit `0` means the scan completed, exit `1` means input could not be read or parsed, and exit `2` means strict validation failed. Add `--format json` for machine-readable diagnostics, or run `robot-skill validate robot-skill.yaml` to validate an existing manifest.
+
+The 1.0 evidence contract covers policy framework and version; robot, gripper, and sensors; control frequency; observation and action shapes; dataset schema; dependencies; source revision; known compatibility; and evaluation evidence.
+
+See the [public validator guide](https://embodied-registry.vercel.app/validator), [JSON Schema](embodied-registry/schema/robot-skill.schema.json), and [complete example](embodied-registry/schema/example.robot-skill.json).
+
+The inspector reads only the supplied directory. It never executes policy code, imports the target repository, contacts a registry, or sends telemetry. Python 3.10–3.12 is supported on Linux, macOS, and Windows.
+
 ## Phase 0 focus
 
 The initial community is practitioners actively attempting to reproduce or adapt public manipulation policies on SO-100, SO-101, and closely compatible low-cost LeRobot hardware. The first measurable problem is the time and uncertainty involved in reconstructing artifact, calibration, sensing, action, runtime, and evaluation conditions.
@@ -26,6 +43,8 @@ Direct observation, participant reports, and project inference are distinguished
 ## Repository layout
 
 - `embodied-registry/` — Next.js application deployed on Vercel
-- `embodied-registry/schema/` — open robot-skill manifest schema and example
+- `robot_skill/` — Python command-line validator
+- `tests/` — validator contracts and representative repository layouts
+- `embodied-registry/schema/` — open robot-skill 1.0 schema and complete example
 - `embodied-registry/supabase/` — production database migration prepared for Phase 2
 - `.github/ISSUE_TEMPLATE/` — Phase 1 interview and design-partner intake

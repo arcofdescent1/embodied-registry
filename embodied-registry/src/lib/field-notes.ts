@@ -72,6 +72,25 @@ export const fieldNotes: FieldNote[] = [
       { label: "LeRobot robot interface", href: "https://huggingface.co/docs/lerobot/main/api/robots" },
       { label: "MCAP multimodal robotics logs", href: "https://mcap.dev/" }
     ]
+  },
+  {
+    slug: "what-the-validator-cannot-infer",
+    number: "04",
+    title: "What the first robot-skill validator cannot infer",
+    summary: "Release notes from turning the proposed reproducibility record into a working local inspector—and the evidence automation must not pretend to know.",
+    published: "September 8, 2026",
+    readTime: "4 min",
+    sections: [
+      { heading: "Automation should expose uncertainty", paragraphs: ["Version 1.0 can inventory configuration files, dependency declarations, repository identity, common framework and architecture markers, robot names, dataset references, shapes, sensors, and control frequency. It writes what it finds into a portable manifest.", "It deliberately uses null values and explicit findings when evidence is missing. Guessing a gripper, framework version, calibration, or success rate would make a clean-looking record less trustworthy than an incomplete one."] },
+      { heading: "The hardest evidence is experiential", paragraphs: ["A repository scan cannot prove that a policy ran, that an adapter preserves action semantics, or that a reported result followed a particular reset and success protocol. Compatibility and evaluations therefore require evidence supplied by a practitioner; the tool never converts textual similarity into a verified claim."] },
+      { heading: "Repository conventions are inconsistent", paragraphs: ["The first implementation recognizes several common JSON keys, README markers, dependency files, and Git metadata. That catches straightforward LeRobot-style layouts, but custom Hydra trees and Python-constructed configurations may remain opaque because the inspector never imports or executes target code."], bullets: ["Safe inspection takes priority over maximal inference.", "Stable finding codes make failures usable in CI and bug reports.", "Ten representative layouts protect the current detection contract; real-world reports will determine the next adapters."] },
+      { heading: "The useful output is the missing list", paragraphs: ["The validator is valuable before it can fill every field. A maintainer can run it, commit the draft, and resolve a finite list of absent claims. Another team can inspect the same record before buying hardware or beginning integration."] }
+    ],
+    sources: [
+      { label: "robot-skill 1.0 implementation", href: "https://github.com/arcofdescent1/embodied-registry/tree/v1.0.0/robot_skill" },
+      { label: "robot-skill 1.0 schema", href: "https://github.com/arcofdescent1/embodied-registry/blob/v1.0.0/embodied-registry/schema/robot-skill.schema.json" },
+      { label: "Validator test suite", href: "https://github.com/arcofdescent1/embodied-registry/blob/v1.0.0/tests/test_cli.py" }
+    ]
   }
 ];
 

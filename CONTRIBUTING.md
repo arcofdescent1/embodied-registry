@@ -2,6 +2,17 @@
 
 Embodied Registry is currently studying reproducibility and compatibility for low-cost LeRobot manipulation arms. The most useful contribution is a concrete account of attempting to run someone else's policy.
 
+## Validator changes
+
+Install the project and run its complete test suite before opening a pull request:
+
+```bash
+python -m pip install -e .
+python -m unittest discover -s tests -v
+```
+
+Changes to the manifest contract must keep the packaged schema and public schema equivalent, preserve a valid complete example, and include accepted- and rejected-input tests. Breaking changes require a new schema version. The inspector must never import or execute code from a target repository and must not send telemetry.
+
 ## Participate in discovery
 
 - Open a **problem conversation** to document a transfer attempt.

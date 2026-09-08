@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "embodied-registry"
+version = "1.0.0"
+description = "Inspect robot-policy repositories and produce portable reproducibility manifests."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Embodied Registry contributors" }]
+keywords = ["robotics", "lerobot", "reproducibility", "robot-policy"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = ["PyYAML>=6.0.1,<7", "jsonschema>=4.22,<5"]
+
+[project.urls]
+Homepage = "https://embodied-registry.vercel.app/validator"
+Repository = "https://github.com/arcofdescent1/embodied-registry"
+Issues = "https://github.com/arcofdescent1/embodied-registry/issues"
+
+[project.scripts]
+robot-skill = "robot_skill.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["robot_skill"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"robot_skill/robot-skill.schema.json" = "robot_skill/robot-skill.schema.json"
