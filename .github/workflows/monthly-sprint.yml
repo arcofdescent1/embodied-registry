@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Open next sprint selection issue
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const now = new Date();
@@ -43,4 +43,3 @@ jobs:
                 'Close this issue after the event page, application deadline, kickoff, evidence deadline, results session, and report date are published.'
               ].join('\n')
             });
-
