@@ -47,7 +47,7 @@ aside { border-right:1px solid var(--line); padding:34px 22px; display:flex; fle
 kbd { font:500 10px var(--font-geist-mono); color:#7b8883; border:1px solid var(--line); border-bottom-color:#c7d0ca; background:#f7f9f7; border-radius:4px; padding:4px 7px; }
 .filter-button { height:50px; min-width:104px; }.filter-button span { display:inline-grid; place-items:center; margin-left:7px; width:18px; height:18px; border-radius:50%; background:var(--forest); color:#fff; font-size:9px; }
 .section-heading { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:14px; }.section-heading h2 { margin:0 0 5px; font-size:17px; letter-spacing:-.02em; }.section-heading p { margin:0; color:#7f8a86; font-size:11px; }
-.sort-button { height:34px; font-size:11px; color:#62706b; }
+.sort-button { height:34px; font-size:11px; color:#62706b; }.sort-label { color:#8a9691; font:550 9px var(--font-geist-mono); text-transform:uppercase; letter-spacing:.05em; }
 
 .evaluation-list { display:flex; flex-direction:column; gap:9px; }.evaluation-card { min-height:112px; display:grid; grid-template-columns:48px minmax(0,1fr) 120px 30px; gap:17px; align-items:center; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:16px 18px; transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease; }
 .evaluation-card:hover { transform:translateY(-1px); border-color:#bcc9c1; box-shadow:0 8px 25px rgba(28,52,43,.07); }.skill-icon { width:48px; height:48px; border-radius:9px; background:#e9eeea; border:1px solid #d9e1dc; display:grid; place-items:center; font:650 10px var(--font-geist-mono); color:var(--forest); position:relative; }
