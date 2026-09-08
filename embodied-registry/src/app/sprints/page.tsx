@@ -69,6 +69,7 @@ export default function SprintsPage() {
         <div>
           <a className="primary-link lime" href={applyUrl}>Apply by September 18 ↗</a>
           <a href={evidenceUrl}>Submit sprint evidence →</a>
+          <a href="https://github.com/arcofdescent1/embodied-registry/discussions/2">Join the sprint discussion →</a>
           <a href="https://github.com/arcofdescent1/embodied-registry/blob/main/community/sprints/README.md">Read the operating handbook →</a>
           <a href="https://meet.jit.si/EmbodiedRegistrySprint01">Open the public session room →</a>
         </div>

@@ -29,6 +29,7 @@ The community runs one two-week, multi-hardware reproduction study each month. E
 
 - [Apply to Sprint 01](https://github.com/arcofdescent1/embodied-registry/issues/new?template=sprint-application.yml)
 - [Submit sprint evidence](https://github.com/arcofdescent1/embodied-registry/issues/new?template=sprint-evidence.yml)
+- [Join the Sprint 01 discussion](https://github.com/arcofdescent1/embodied-registry/discussions/2)
 - [Read the operating handbook](community/sprints/README.md)
 - [Read the frozen sprint brief](community/sprints/2026-10-act-so101-pick-place.md)
 - [Subscribe to the event calendar](https://embodied-registry.vercel.app/reproduction-sprints.ics)
